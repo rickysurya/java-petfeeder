@@ -11,6 +11,10 @@ public class PetFeeder {
 	public static void main(String[] args) {
 		PetFeeder petfeeder = new PetFeeder();
 		petfeeder.feedingtime = PetOwner.setFeedingTime();
+		if (petfeeder.feedingtime == -1) { 
+			System.out.println("Error, your input should be integer between 0 and 23");
+			System.exit(1);
+		}
 		Pet dog = new Pet();
 				
 		Timer timer = new Timer();
@@ -27,11 +31,9 @@ public class PetFeeder {
 					counter++;
 				} else {
 					counter = 0;
-					System.out.println("Current time is "+counter+" o clock");
-					counter++;
 				}
 			}
 		};
-		timer.schedule(task, 0, 1000);
+		timer.schedule(task, 0, 100);
 	};
 }
