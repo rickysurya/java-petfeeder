@@ -32,6 +32,6 @@ public class PetFeeder {
 				}
 			}
 		};
-		timer.schedule(task, 0, 500);
+		timer.schedule(task, 0, 1000);
 	};
 }
